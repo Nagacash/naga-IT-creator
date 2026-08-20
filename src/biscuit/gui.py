@@ -1,6 +1,20 @@
 import platform
+import tkinter as tk
 
-from tkinterDnD import Tk
+# tkinterDnD provides drag-and-drop, but its bundled dylib is x86_64-only and
+# fails to load on Apple Silicon (arm64) and other platforms. Fall back to a
+# plain Tk root when tkinterDnD is unavailable or cannot initialize.
+try:
+    from tkinterDnD import Tk as DnDTk
+
+    try:
+        _probe = DnDTk()
+        _probe.destroy()
+        Tk = DnDTk
+    except Exception:
+        Tk = tk.Tk
+except Exception:
+    Tk = tk.Tk
 
 from .common import *
 from .config import ConfigManager
