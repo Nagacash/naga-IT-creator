@@ -58,7 +58,7 @@ class TestSysInfo:
 
     def test_str(self, sysinfo):
         result = str(sysinfo)
-        assert "BISCUIT" in result
+        assert "NAGA CODEX" in result
         assert "Windows" in result
         assert "Python" in result
         assert "MIT License" in result
