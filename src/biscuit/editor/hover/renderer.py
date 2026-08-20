@@ -17,7 +17,7 @@ from pygments import highlight
 from pygments.formatters import html
 from pygments.lexers import get_lexer_by_name
 from pygments.style import Style
-from tkinterweb import HtmlFrame
+from biscuit.common.tkhtml_fallback import HtmlFrame
 
 from biscuit.common.ui import Frame, Scrollbar
 
