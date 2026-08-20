@@ -1,3 +1,5 @@
+import platform
+
 from .config import ConfigManager
 from .events import EventManager
 from .gui import GUIManager
@@ -82,7 +84,11 @@ class App(EventManager, GUIManager, ConfigManager):
         self.palette.generate_help_actionset()
         self.logger.info("Initializing editor finished.")
 
-        self.update_idletasks()
+        if platform.system() != "Darwin":
+            try:
+                self.update_idletasks()
+            except Exception:
+                pass
         self.menubar.update()
         self.set_title()
         self.open(dir)
