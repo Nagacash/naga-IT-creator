@@ -61,6 +61,20 @@ if HtmlFrame is None:
             self.html = self
             self._link_cb = None
 
+        def config(self, cnf=None, **kwargs):
+            if cnf:
+                kwargs.update(cnf)
+            if "yscrollcommand" in kwargs:
+                yscroll = kwargs.pop("yscrollcommand")
+                self._text.config(yscrollcommand=yscroll)
+            if kwargs:
+                try:
+                    super().config(**kwargs)
+                except Exception:
+                    pass
+
+        configure = config
+
         def load_html(self, html, **kwargs):
             text = re.sub(r"<[^>]+>", "", html or "")
             self._text.config(state=tk.NORMAL)
