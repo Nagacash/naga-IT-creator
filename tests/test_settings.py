@@ -28,7 +28,9 @@ class TestConfig:
     def test_get_value_none_default(self, config):
         assert config.get_value("nonexistent", None) is None
 
-    def test_setup_properties_defaults(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_setup_properties_defaults(self, mock_light, mock_dark, config):
         config.data = {}
         config.setup_properties()
         assert config.font == ("Fira Code", 12)
@@ -38,7 +40,9 @@ class TestConfig:
         assert config.vim_mode is False
         assert config.show_minimap is True
 
-    def test_setup_properties_custom(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_setup_properties_custom(self, mock_light, mock_dark, config):
         config.data = {
             "font": "JetBrains Mono",
             "font_size": 14,
@@ -51,17 +55,23 @@ class TestConfig:
         assert config.tab_size == 2
         assert config.vim_mode is True
 
-    def test_setup_properties_theme_dark(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_setup_properties_theme_dark(self, mock_light, mock_dark, config):
         config.data = {"theme": "dark"}
         config.setup_properties()
         assert "VSCodeDark" in config.theme.__class__.__name__
 
-    def test_setup_properties_theme_light(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_setup_properties_theme_light(self, mock_light, mock_dark, config):
         config.data = {"theme": "light"}
         config.setup_properties()
         assert "VSCodeLight" in config.theme.__class__.__name__
 
-    def test_setup_properties_theme_unknown_defaults_to_dark(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_setup_properties_theme_unknown_defaults_to_dark(self, mock_light, mock_dark, config):
         config.data = {"theme": "nonexistent"}
         config.setup_properties()
         assert config.theme is not None
@@ -77,7 +87,9 @@ class TestConfig:
                 data = toml.load(f)
             assert data["font_size"] == 14
 
-    def test_set_value_updates_and_saves(self, config):
+    @patch("sv_ttk.use_dark_theme")
+    @patch("sv_ttk.use_light_theme")
+    def test_set_value_updates_and_saves(self, mock_light, mock_dark, config):
         with tempfile.TemporaryDirectory() as tmpdir:
             config.base.configdir = tmpdir
             config.config_path = os.path.join(tmpdir, "settings.toml")
