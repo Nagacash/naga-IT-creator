@@ -43,7 +43,7 @@ class ExtensionManager:
         # attributes related to cloned local repo
         self.extension_dir: Path
         self.extensions_repository: GitRepo = None
-        self.extensions_repo_url = "https://github.com/tomlin7/biscuit-extensions"
+        self.extensions_repo_url = "https://github.com/Nagacash/naga-IT-creator"
         self.extensions_list = "extensions.toml"
         # this flag marks if extensions repo has already been cloned
         self.repository_available = False

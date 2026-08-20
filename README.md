@@ -1,46 +1,39 @@
 
-[![GitHub](https://img.shields.io/github/license/tomlin7/biscuit)](https://github.com/tomlin7/biscuit/blob/main/LICENSE)
-[![PyPI - Version](https://img.shields.io/pypi/v/biscuit-editor)](https://pypi.org/project/biscuit-editor/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/biscuit-editor)](https://pypi.org/project/biscuit-editor/)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tomlin7/biscuit)](https://github.com/tomlin7/biscuit/pulse)
-[![GitHub last commit](https://img.shields.io/github/last-commit/tomlin7/biscuit)](https://github.com/tomlin7/biscuit/commits/main)
-[![GitLab Issues](https://img.shields.io/github/issues/tomlin7/biscuit)](https://github.com/tomlin7/biscuit/issues)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tomlin7/biscuit)
-[![codecov](https://codecov.io/github/tomlin7/biscuit/graph/badge.svg?token=2LI71XDDHZ)](https://codecov.io/github/tomlin7/biscuit)
+[![GitHub](https://img.shields.io/github/license/Nagacash/naga-IT-creator)](https://github.com/Nagacash/naga-IT-creator/blob/main/LICENSE)
+[![PyPI - Version](https://img.shields.io/pypi/v/nagacodex-editor)](https://pypi.org/project/nagacodex-editor/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/nagacodex-editor)](https://pypi.org/project/nagacodex-editor/)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Nagacash/naga-IT-creator)](https://github.com/Nagacash/naga-IT-creator/pulse)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Nagacash/naga-IT-creator)](https://github.com/Nagacash/naga-IT-creator/commits/main)
+[![GitLab Issues](https://img.shields.io/github/issues/Nagacash/naga-IT-creator)](https://github.com/Nagacash/naga-IT-creator/issues)
 
 <!--
 ![image](https://github.com/user-attachments/assets/a578d600-a4a8-4ce4-904d-4aa0e73fc124)
 -->
 
-`biscuit` is a fast, extensible, native code editor with agents. lightweight <20 mb in size. install and start using in seconds. 
+`Naga Codex` is a fast, extensible, native AI code editor with NVIDIA NIM built in. lightweight <20 mb in size. install and start using in seconds. 
 
-- explore popular extensions, visit the new [**extension marketplace**](https://biscuit-extensions.github.io/marketplace/) we've been working on
-- for developer/user guides & API reference, check [documentation](https://tomlin7.github.io/biscuit), WIP so i recommend checking deepwiki.
-- packed with superpowers, [list of features](https://tomlin7.github.io/biscuit/#features)
+- built on the open-source biscuit engine, rebranded for Naga Codex
+- for developer/user guides, see the project [documentation](https://github.com/Nagacash/naga-IT-creator)
+- packed with superpowers: AI chat, agentic edits, code intelligence, source control
 
-<img alt="biscuit" src="https://github.com/user-attachments/assets/ac5254cc-e1ac-4fe6-a582-51b5129756e3" />
+<img alt="nagacodex" src="https://github.com/user-attachments/assets/ac5254cc-e1ac-4fe6-a582-51b5129756e3" />
 
 ## `installing`
 
 install the latest release by running:
 
 ```bash
-pip install biscuit-editor        # using pip
-uv tool install biscuit-editor    # using uv
+pip install nagacodex-editor        # using pip
+uv tool install nagacodex-editor    # using uv
 ```
 
-quickly open up a project using **`biscuit path/to/src`** and start editing. see other [installation methods](https://tomlin7.github.io/biscuit/getting-started/installation/) if you'd like to (like pyinstaller).
-
-<!-- ![home](https://github.com/user-attachments/assets/cd18dcfa-40a9-47b3-aab4-ed38ea3c1715) -->
+quickly open up a project using **`nagacodex path/to/src`** and start editing.
 
 ## `contributing`
 
-- please check the [docs](https://tomlin7.github.io/biscuit/getting-started/quick-start/) and [contributing guide](https://github.com/tomlin7/Biscuit/blob/main/CONTRIBUTING.md) for a quick tour of the project structure and to set up the environment.
-- to make a new extension, read the [extension docs](https://github.com/tomlin7/biscuit-extensions) :>
-- [support the work](https://github.com/sponsors/tomlin7)
+- please check the [contributing guide](https://github.com/Nagacash/naga-IT-creator/blob/main/CONTRIBUTING.md) for a quick tour of the project structure and to set up the environment.
+- [support the work](https://github.com/sponsors/Nagacash)
 
-> [!TIP]
-> This project supports both **Poetry** and **uv** for dependency management. See the contributing guide for setup instructions.
 
 # `PROGRESS` 
 
@@ -132,5 +125,5 @@ more language servers are registered through extensions, see the [rust](https://
 
 ## `license`
 
-biscuit uses the MIT License, see [LICENSE](https://github.com/tomlin7/Biscuit/blob/main/LICENSE.md) file.
+biscuit uses the MIT License, see [LICENSE](https://github.com/Nagacash/naga-IT-creator/blob/main/LICENSE.md) file.
 # naga-IT-creator

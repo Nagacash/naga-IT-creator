@@ -1,8 +1,8 @@
 """
-Biscuit Tools for AI Coding Agent
+Naga Codex Tools for AI Coding Agent
 =================================
 
-Comprehensive tools for the Biscuit AI coding agent.
+Comprehensive tools for the Naga Codex AI coding agent.
 Includes file operations, code search, terminal commands, and task management.
 """
 

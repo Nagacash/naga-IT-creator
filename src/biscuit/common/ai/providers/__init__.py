@@ -55,14 +55,13 @@ def get_supported_model_ids() -> List[str]:
 def _auto_register() -> None:
     if _providers:
         return
-          from .gemini import GeminiProvider                                                                                           
-          from .anthropic import AnthropicProvider                                                                                     
-          from .groq import GroqProvider                                                                                               
-          from .minimax import MiniMaxProvider                                                                                         
-          from .nvidia import NvidiaProvider                                                                                           
-          register(GeminiProvider)                                                                                                     
-          register(AnthropicProvider)                                                                                                  
-          register(GroqProvider)                                                                                                       
-          register(MiniMaxProvider)                                                                                                    
-          register(NvidiaProvider)
+    from .gemini import GeminiProvider
+    from .anthropic import AnthropicProvider
+    from .groq import GroqProvider
+    from .minimax import MiniMaxProvider
+    from .nvidia import NvidiaProvider
+    register(GeminiProvider)
+    register(AnthropicProvider)
+    register(GroqProvider)
     register(MiniMaxProvider)
+    register(NvidiaProvider)

@@ -57,11 +57,11 @@ class SysInfo:
     def __str__(self) -> None:
         # ikr this is a mess
         return dedent(
-            f"""BISCUIT
+            f"""NAGA CODEX
 ----------------------------------------
 
-"Life is short, eat more biscuits." 
-    - billiam (2020, colorized, not really)
+"Decoded history. Engineered future." 
+    - Naga Codex (2026)
 
 ----------------------------------------
 
