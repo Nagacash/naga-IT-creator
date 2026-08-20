@@ -1,8 +1,8 @@
 [project]
-name = "biscuit-editor"
+name = "nagacodex-editor"
 version = "3.6.0"
-description = "A lightweight, fast, and extensible code editor with a growing community"
-authors = [{ name = "Billy", email = "billydevbusiness@gmail.com" }]
+description = "Naga Codex — a lightweight, fast, and extensible AI code editor with NVIDIA NIM built in"
+authors = [{ name = "Naga Codex", email = "chosenfewrecords@hotmail.de" }]
 license = "MIT"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -43,11 +43,12 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/tomlin7/biscuit"
-Repository = "https://github.com/tomlin7/biscuit"
+Homepage = "https://github.com/Nagacash/naga-IT-creator"
+Repository = "https://github.com/Nagacash/naga-IT-creator"
 
 [project.scripts]
 biscuit = "biscuit.cli:run"
+nagacodex = "biscuit.cli:run"
 
 [tool.poetry]
 packages = [{ include = "biscuit", from = "src" }]

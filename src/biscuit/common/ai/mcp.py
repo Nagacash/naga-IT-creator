@@ -54,7 +54,7 @@ class MCPServer:
             result = await self._request("initialize", {
                 "protocolVersion": "2024-11-05",
                 "capabilities": {},
-                "clientInfo": {"name": "biscuit", "version": "1.0"},
+                "clientInfo": {"name": "nagacodex", "version": "1.0"},
             })
             if result is None:
                 return False

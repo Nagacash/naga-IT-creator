@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import toml
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from biscuit.app import App
 
 class SessionManager:
     def __init__(self, base: App):

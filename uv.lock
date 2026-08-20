@@ -235,6 +235,15 @@ wheels = [
 ]
 
 [[package]]
+name = "backports-asyncio-runner"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/8e/ff/70dca7d7cb1cbc0edb2c6cc0c38b65cba36cccc491eca64cabd5fe7f8670/backports_asyncio_runner-1.2.0.tar.gz", hash = "sha256:a5aa7b2b7d8f8bfcaa2b57313f70792df84e32a2a746f585213373f900b42162", size = 69893, upload-time = "2025-07-02T02:27:15.685Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/59/76ab57e3fe74484f48a53f8e337171b4a2349e506eabe136d7e01d059086/backports_asyncio_runner-1.2.0-py3-none-any.whl", hash = "sha256:0da0a936a8aeb554eccb426dc55af3ba63bcdc69fa1a600b5bb305413a4477b5", size = 12313, upload-time = "2025-07-02T02:27:14.263Z" },
+]
+
+[[package]]
 name = "backrefs"
 version = "7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -245,94 +254,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/36/da/87912ddec6e06feffbaa3d7aa18fc6352bee2e8f1fee185d7d1690f8f4e8/backrefs-7.0-py312-none-any.whl", hash = "sha256:ca42ce6a49ace3d75684dfa9937f3373902a63284ecb385ce36d15e5dcb41c12", size = 398537, upload-time = "2026-04-28T16:27:58.913Z" },
     { url = "https://files.pythonhosted.org/packages/00/bb/90ba423612b6aa0adccc6b1874bcd4a9b44b660c0c16f346611e00f64ac3/backrefs-7.0-py313-none-any.whl", hash = "sha256:f2c52955d631b9e1ac4cd56209f0a3a946d592b98e7790e77699339ae01c102a", size = 400491, upload-time = "2026-04-28T16:28:00.928Z" },
     { url = "https://files.pythonhosted.org/packages/3e/5c/fb93d3092640a24dfb7bd7727a24016d7c01774ca013e60efd3f683c8002/backrefs-7.0-py314-none-any.whl", hash = "sha256:a6448b28180e3ca01134c9cf09dcebafad8531072e09903c5451748a05f24bc9", size = 412349, upload-time = "2026-04-28T16:28:02.412Z" },
-]
-
-[[package]]
-name = "biscuit-editor"
-version = "3.5.0"
-source = { editable = "." }
-dependencies = [
-    { name = "anthropic" },
-    { name = "chardet" },
-    { name = "click" },
-    { name = "editorconfig" },
-    { name = "filetype" },
-    { name = "gitpython" },
-    { name = "google-genai" },
-    { name = "hintedtext" },
-    { name = "mistune" },
-    { name = "pillow" },
-    { name = "psutil" },
-    { name = "ptyprocess", marker = "sys_platform == 'linux'" },
-    { name = "pygments" },
-    { name = "pyperclip" },
-    { name = "python-tkdnd" },
-    { name = "pywinpty", marker = "sys_platform == 'win32'" },
-    { name = "requests" },
-    { name = "sortedcontainers" },
-    { name = "sv-ttk" },
-    { name = "tarts" },
-    { name = "tkextrafont", marker = "sys_platform == 'win32'" },
-    { name = "tkinterweb", extra = ["full"] },
-    { name = "toml" },
-    { name = "tree-sitter" },
-    { name = "tree-sitter-language-pack" },
-    { name = "watchdog" },
-]
-
-[package.optional-dependencies]
-docs = [
-    { name = "mkdocs" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings-python" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "git-changelog" },
-    { name = "pytest" },
-    { name = "pytest-dotenv" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "anthropic", specifier = ">=0.117.0,<0.118.0" },
-    { name = "chardet", specifier = ">=7.4.3,<8.0.0" },
-    { name = "click", specifier = ">=8.4.2,<9.0.0" },
-    { name = "editorconfig", specifier = ">=0.17.1,<0.18.0" },
-    { name = "filetype", specifier = ">=1.2.0,<2.0.0" },
-    { name = "gitpython", specifier = ">=3.1.52,<4.0.0" },
-    { name = "google-genai", specifier = ">=2.12.1,<3.0.0" },
-    { name = "hintedtext", specifier = ">=0.6.0,<0.7.0" },
-    { name = "mistune", specifier = ">=3.3.3,<4.0.0" },
-    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6.1,<2.0.0" },
-    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.7.7,<10.0.0" },
-    { name = "mkdocstrings-python", marker = "extra == 'docs'", specifier = ">=2.0.5,<3.0.0" },
-    { name = "pillow", specifier = ">=12.3.0,<13.0.0" },
-    { name = "psutil", specifier = ">=7.2.2,<8.0.0" },
-    { name = "ptyprocess", marker = "sys_platform == 'linux'", specifier = ">=0.7.0,<0.8.0" },
-    { name = "pygments", specifier = ">=2.20.0,<3.0.0" },
-    { name = "pyperclip", specifier = ">=1.11.0,<2.0.0" },
-    { name = "python-tkdnd", specifier = ">=0.2.1,<0.3.0" },
-    { name = "pywinpty", marker = "sys_platform == 'win32'", specifier = ">=3.0.5,<4.0.0" },
-    { name = "requests", specifier = ">=2.34.2,<3.0.0" },
-    { name = "sortedcontainers", specifier = ">=2.4.0,<3.0.0" },
-    { name = "sv-ttk", specifier = ">=2.6.1,<3.0.0" },
-    { name = "tarts", specifier = ">=0.20.1,<0.21.0" },
-    { name = "tkextrafont", marker = "sys_platform == 'win32'", specifier = ">=0.6.3,<0.7.0" },
-    { name = "tkinterweb", extras = ["full"], specifier = ">=4.25.3,<5.0.0" },
-    { name = "toml", specifier = ">=0.10.2,<0.11.0" },
-    { name = "tree-sitter", specifier = ">=0.26.0,<0.27.0" },
-    { name = "tree-sitter-language-pack", specifier = ">=1.12.5,<2.0.0" },
-    { name = "watchdog", specifier = ">=6.0.0,<7.0.0" },
-]
-provides-extras = ["docs"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "git-changelog", specifier = ">=2.9.4,<3.0.0" },
-    { name = "pytest", specifier = ">=9.1.1,<10.0.0" },
-    { name = "pytest-dotenv", specifier = ">=0.5.2,<0.6.0" },
 ]
 
 [[package]]
@@ -1772,6 +1693,96 @@ wheels = [
 ]
 
 [[package]]
+name = "nagacodex-editor"
+version = "3.6.0"
+source = { editable = "." }
+dependencies = [
+    { name = "anthropic" },
+    { name = "chardet" },
+    { name = "click" },
+    { name = "editorconfig" },
+    { name = "filetype" },
+    { name = "gitpython" },
+    { name = "google-genai" },
+    { name = "hintedtext" },
+    { name = "mistune" },
+    { name = "pillow" },
+    { name = "psutil" },
+    { name = "ptyprocess", marker = "sys_platform == 'linux'" },
+    { name = "pygments" },
+    { name = "pyperclip" },
+    { name = "python-tkdnd" },
+    { name = "pywinpty", marker = "sys_platform == 'win32'" },
+    { name = "requests" },
+    { name = "sortedcontainers" },
+    { name = "sv-ttk" },
+    { name = "tarts" },
+    { name = "tkextrafont", marker = "sys_platform == 'win32'" },
+    { name = "tkinterweb", extra = ["full"] },
+    { name = "toml" },
+    { name = "tree-sitter" },
+    { name = "tree-sitter-language-pack" },
+    { name = "watchdog" },
+]
+
+[package.optional-dependencies]
+docs = [
+    { name = "mkdocs" },
+    { name = "mkdocs-material" },
+    { name = "mkdocstrings-python" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "git-changelog" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "pytest-dotenv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "anthropic", specifier = ">=0.117.0,<0.118.0" },
+    { name = "chardet", specifier = ">=7.4.3,<8.0.0" },
+    { name = "click", specifier = ">=8.4.2,<9.0.0" },
+    { name = "editorconfig", specifier = ">=0.17.1,<0.18.0" },
+    { name = "filetype", specifier = ">=1.2.0,<2.0.0" },
+    { name = "gitpython", specifier = ">=3.1.52,<4.0.0" },
+    { name = "google-genai", specifier = ">=2.12.1,<3.0.0" },
+    { name = "hintedtext", specifier = ">=0.6.0,<0.7.0" },
+    { name = "mistune", specifier = ">=3.3.3,<4.0.0" },
+    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6.1,<2.0.0" },
+    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.7.7,<10.0.0" },
+    { name = "mkdocstrings-python", marker = "extra == 'docs'", specifier = ">=2.0.5,<3.0.0" },
+    { name = "pillow", specifier = ">=12.3.0,<13.0.0" },
+    { name = "psutil", specifier = ">=7.2.2,<8.0.0" },
+    { name = "ptyprocess", marker = "sys_platform == 'linux'", specifier = ">=0.7.0,<0.8.0" },
+    { name = "pygments", specifier = ">=2.20.0,<3.0.0" },
+    { name = "pyperclip", specifier = ">=1.11.0,<2.0.0" },
+    { name = "python-tkdnd", specifier = ">=0.2.1,<0.3.0" },
+    { name = "pywinpty", marker = "sys_platform == 'win32'", specifier = ">=3.0.5,<4.0.0" },
+    { name = "requests", specifier = ">=2.34.2,<3.0.0" },
+    { name = "sortedcontainers", specifier = ">=2.4.0,<3.0.0" },
+    { name = "sv-ttk", specifier = ">=2.6.1,<3.0.0" },
+    { name = "tarts", specifier = ">=0.20.1,<0.21.0" },
+    { name = "tkextrafont", marker = "sys_platform == 'win32'", specifier = ">=0.6.3,<0.7.0" },
+    { name = "tkinterweb", extras = ["full"], specifier = ">=4.25.3,<5.0.0" },
+    { name = "toml", specifier = ">=0.10.2,<0.11.0" },
+    { name = "tree-sitter", specifier = ">=0.26.0,<0.27.0" },
+    { name = "tree-sitter-language-pack", specifier = ">=1.12.5,<2.0.0" },
+    { name = "watchdog", specifier = ">=6.0.0,<7.0.0" },
+]
+provides-extras = ["docs"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "git-changelog", specifier = ">=2.9.4,<3.0.0" },
+    { name = "pytest", specifier = ">=9.1.1,<10.0.0" },
+    { name = "pytest-asyncio", specifier = ">=1.4.0,<2.0.0" },
+    { name = "pytest-dotenv", specifier = ">=0.5.2,<0.6.0" },
+]
+
+[[package]]
 name = "packaging"
 version = "26.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2298,6 +2309,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e4/47/b9efed96c114afcfa3c9d3fe98a76a1d14c74a9e266d397cf6eb64be5e01/pytest-9.1.1.tar.gz", hash = "sha256:1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313", size = 1636369, upload-time = "2026-06-19T10:58:32.857Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/24/25/1de2678b631f5a49215c6c96fff41ba892b0a34df68d6d80292b1b48aa7f/pytest-9.1.1-py3-none-any.whl", hash = "sha256:37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c", size = 386536, upload-time = "2026-06-19T10:58:31.347Z" },
+]
+
+[[package]]
+name = "pytest-asyncio"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "backports-asyncio-runner", marker = "python_full_version < '3.11'" },
+    { name = "pytest" },
+    { name = "typing-extensions", marker = "python_full_version < '3.13'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/43/7c/d36d04db312ecf4298932ef77e6e4a9e8ad017906e24e34f0b0c361a2473/pytest_asyncio-1.4.0.tar.gz", hash = "sha256:c6c0d2259945122819f171a32ecea2c349ead889ee28176caaf492143424be42", size = 58514, upload-time = "2026-05-26T09:56:04.083Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/e2/08a497ef684b88559c9cc5f4ad53a37e7b99e727094a86d6ea32536d5d3c/pytest_asyncio-1.4.0-py3-none-any.whl", hash = "sha256:933ca923a23075a87fb7070c0ec272a6848489824d887c85c812670932835aa1", size = 16930, upload-time = "2026-05-26T09:56:02.576Z" },
 ]
 
 [[package]]
