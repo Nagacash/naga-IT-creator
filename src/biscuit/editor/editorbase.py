@@ -66,8 +66,11 @@ class BaseEditor(Frame):
 
         self.__buttons__ = []
 
-        self.register_drop_target(dnd.FILE)
-        self.bind("<<Drop>>", self.ondrop)
+        try:
+            self.register_drop_target(dnd.FILE)
+            self.bind("<<Drop>>", self.ondrop)
+        except Exception:
+            pass
 
     def unsaved_changes(self): ...
     def breakpoints(self, *_): ...
