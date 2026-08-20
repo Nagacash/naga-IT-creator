@@ -23,7 +23,7 @@ class TestBinder:
         mock_base.settings.bindings.close_all_tabs = "<Control-W>"
         mock_base.settings.bindings.change_tab = "<Control-Tab>"
         mock_base.settings.bindings.change_tab_back = "<Control-Shift-Tab>"
-        mock_base.settings.bindings.split_tab = "<Control-\\>"
+        mock_base.settings.bindings.split_tab = "<Control-backslash>"
         mock_base.settings.bindings.command_palette = "<Control-P>"
         mock_base.settings.bindings.file_search = "<Control-p>"
         mock_base.settings.bindings.symbol_outline = "<Control-j>"

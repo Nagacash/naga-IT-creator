@@ -69,6 +69,8 @@ class EventManager(GUIManager, ConfigManager):
             return self.open_directory(path)
 
         if os.path.isfile(path):
+            parent = os.path.dirname(os.path.abspath(path))
+            self.open_directory(parent)
             return self.open_editor(path)
 
         self.notifications.error(f"Path does not exist: {path}")
