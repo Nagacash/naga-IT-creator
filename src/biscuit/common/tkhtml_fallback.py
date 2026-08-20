@@ -5,23 +5,44 @@ prebuilt binary for Tcl/Tk 9 (and is awkward to compile on some
 platforms, e.g. Apple Silicon). To keep the editor runnable everywhere,
 we expose a single `HtmlFrame` symbol:
 
-- If tkinterweb + Tkhtml load successfully, we re-export the real one.
+- If tkinterweb + a working Tkhtml are available, we re-export the real one.
 - Otherwise we provide a minimal stand-in backed by a plain tk.Text
   that degrades HTML to readable text, so every call site
   (.load_html / .add_css / .on_link_click / .yview / .html.* / .grid /
   .pack) keeps working without crashing the app.
+
+The import alone is not enough to detect breakage: the tkinterweb
+module imports fine even when Tkhtml is missing; the failure only
+surfaces when an HtmlFrame is *instantiated* (it tries to load the
+Tkhtml package into Tcl). So we probe instantiation before deciding.
 """
 
 import re
 import tkinter as tk
 
 try:
+    import tkinterweb  # noqa: F401  (must import for the probe below)
     from tkinterweb import HtmlFrame as _RealHtmlFrame
 
-    HtmlFrame = _RealHtmlFrame
+    # Probe: does constructing an HtmlFrame actually work here? On Tcl/Tk 9
+    # without a compiled Tkhtml, the constructor raises a TclError.
+    _probe = tk.Tk()
+    try:
+        _t = _RealHtmlFrame(_probe)
+        HtmlFrame = _RealHtmlFrame
+    finally:
+        _probe.destroy()
+        try:
+            _t.destroy()
+        except Exception:
+            pass
 except Exception:  # pragma: no cover - platform/Tk dependent
+    HtmlFrame = None
 
-    class HtmlFrame(tk.Frame):
+
+if HtmlFrame is None:
+
+    class HtmlFrame(tk.Frame):  # type: ignore[no-redef]
         """Minimal HtmlFrame replacement using a tk.Text widget."""
 
         def __init__(
