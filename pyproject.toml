@@ -5,7 +5,7 @@ description = "Naga Codex — a lightweight, fast, and extensible AI code editor
 authors = [{ name = "Naga Codex", email = "chosenfewrecords@hotmail.de" }]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 dependencies = [
     "hintedtext>=0.6.0,<0.7.0",
     "watchdog>=6.0.0,<7.0.0",
@@ -55,7 +55,7 @@ packages = [{ include = "biscuit", from = "src" }]
 include = ["./resources/**/*"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10,<3.13"
 hintedtext = "^0.6.0"
 watchdog = "^6.0.0"
 filetype = "^1.2.0"
