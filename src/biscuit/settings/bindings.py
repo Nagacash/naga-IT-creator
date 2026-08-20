@@ -27,7 +27,7 @@ class Bindings:
         self.close_all_tabs = "<Control-W>"
         self.change_tab = "<Control-Tab>"
         self.change_tab_back = "<Control-Shift-Tab>"
-        self.split_tab = "<Control-\\>"
+        self.split_tab = "<Control-backslash>"
 
         self.command_palette = "<Control-P>"
         self.file_search = "<Control-p>"

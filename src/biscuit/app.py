@@ -85,7 +85,7 @@ class App(EventManager, GUIManager, ConfigManager):
         self.update_idletasks()
         self.menubar.update()
         self.set_title()
-        self.open_directory(dir)
+        self.open(dir)
         self.focus_force()
 
     def control_execute(self, text: str) -> None:

@@ -17,15 +17,18 @@ class BiscuitCLI(click.Group):
     def main(self, *args, **kwargs):
         try:
             return super(BiscuitCLI, self).main(*args, **kwargs)
-        except Exception:
+        except Exception as e:
             path = self.path
 
-            if path:
-                path = Path(self.path).resolve()
-                path.mkdir(exist_ok=True)
+            if not path:
+                raise e
+
+            path_obj = Path(path).resolve()
+            if not path_obj.exists() and not path_obj.suffix:
+                path_obj.mkdir(parents=True, exist_ok=True)
 
             appdir = Path(__file__).resolve().parent
-            app = get_app_instance(appdir, open_path=str(path))
+            app = get_app_instance(appdir, open_path=str(path_obj))
             app.run()
 
     def resolve_command(self, ctx, args):
