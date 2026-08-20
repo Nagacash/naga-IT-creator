@@ -1,0 +1,37 @@
+name: "Biscuit Nuitka builds (experimental)"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    if: contains(github.event.head_commit.message, 'nuitka')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install uv
+        run: irm https://astral.sh/uv/install.ps1 | iex
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Nuitka
+        run: uv pip install Nuitka
+
+      - name: Nuitka build
+        run: echo Yes| uv run python -m nuitka --include-data-dir=biscuit\\res=res --include-package-data=tkextrafont --include-package-data=sv_ttk --include-package-data=pygments --include-package-data=tkinterweb --include-package-data=mistune --follow-import-to=pygments --follow-import-to=tkextrafont --follow-import-to=mistune --follow-import-to=tkinterweb --include-package=tkextrafont --include-package=pygments --include-package=mistune --include-package=tkinterweb --include-module=pygments --include-module=mistune --include-module=tkinterweb --include-module=tkextrafont --follow-imports --standalone --enable-plugin=tk-inter biscuit
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: "biscuit-nuitka"
+          path: "biscuit.dist"
