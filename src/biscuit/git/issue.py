@@ -2,7 +2,7 @@ import tkinter as tk
 import webbrowser
 
 import mistune
-from tkinterweb import HtmlFrame
+from biscuit.common.tkhtml_fallback import HtmlFrame
 
 from biscuit.common.icons import Icons
 from biscuit.common.ui import Frame, Label, LinkLabel, Scrollbar
