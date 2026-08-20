@@ -24,18 +24,21 @@ try:
     import tkinterweb  # noqa: F401  (must import for the probe below)
     from tkinterweb import HtmlFrame as _RealHtmlFrame
 
-    # Probe: does constructing an HtmlFrame actually work here? On Tcl/Tk 9
-    # without a compiled Tkhtml, the constructor raises a TclError.
-    _probe = tk.Tk()
     try:
-        _t = _RealHtmlFrame(_probe)
-        HtmlFrame = _RealHtmlFrame
-    finally:
-        _probe.destroy()
+        # Probe: does constructing an HtmlFrame actually work here? On Tcl/Tk 9
+        # without a compiled Tkhtml, the constructor raises a TclError.
+        _probe = tk.Tk()
         try:
-            _t.destroy()
-        except Exception:
-            pass
+            _t = _RealHtmlFrame(_probe)
+            HtmlFrame = _RealHtmlFrame
+        finally:
+            _probe.destroy()
+            try:
+                _t.destroy()
+            except Exception:
+                pass
+    except Exception:
+        HtmlFrame = _RealHtmlFrame
 except Exception:  # pragma: no cover - platform/Tk dependent
     HtmlFrame = None
 

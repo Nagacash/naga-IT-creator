@@ -117,9 +117,10 @@ class GUIManager(Tk, ConfigManager):
         self.configure(bg=self.theme.border, highlightthickness=0)
 
         # very bad hack to fix the window size on windows
-        self.withdraw()
-        self.update_idletasks()
-        self.after(10, self.wm_deiconify)
+        if platform.system() == "Windows":
+            self.withdraw()
+            self.update_idletasks()
+            self.after(10, self.wm_deiconify)
 
         self.setup_floating_widgets()
         self.initialize_layout()
